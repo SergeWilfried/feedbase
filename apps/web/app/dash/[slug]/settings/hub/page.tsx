@@ -13,7 +13,7 @@ export default async function HubSettings({ params }: { params: { slug: string }
 
   // Fetch workspace config
   const { data: workspaceConfig, error: configError } = await getWorkspaceModuleConfig(params.slug, 'server');
-
+  console.log(workspaceConfig);
   if (configError) {
     return <div>{configError.message}</div>;
   }
