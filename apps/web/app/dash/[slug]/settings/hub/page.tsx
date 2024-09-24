@@ -6,7 +6,7 @@ import { getWorkspaceBySlug } from '@/lib/api/workspace';
 export default async function HubSettings({ params }: { params: { slug: string } }) {
   // Fetch workspace data
   const { data: workspace, error } = await getWorkspaceBySlug(params.slug, 'server');
-
+  console.log(workspace);
   if (error) {
     return <div>{error.message}</div>;
   }
