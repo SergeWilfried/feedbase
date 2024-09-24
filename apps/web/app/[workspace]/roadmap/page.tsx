@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Separator } from '@feedbase/ui/components/separator';
 import { getWorkspaceModuleConfig } from '@/lib/api/module';
@@ -29,14 +28,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Feedback({ params }: Props) {
-  const headerList = headers();
-  const pathname = headerList.get('x-pathname');
 
   // Get current user
   const { data: user } = await getCurrentUser('server');
-
+  console.log(user);
   // Get workspace module config
-  const { data: moduleConfig, error: moduleError } = await getWorkspaceModuleConfig(
+  const { error: moduleError } = await getWorkspaceModuleConfig(
     params.workspace,
     'server',
     true,
