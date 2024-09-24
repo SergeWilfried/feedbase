@@ -1,15 +1,12 @@
 import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { notFound, redirect } from 'next/navigation';
-import { Separator } from '@feedbase/ui/components/separator';
 import { getWorkspaceBoards } from '@/lib/api/boards';
 import { getWorkspaceModuleConfig } from '@/lib/api/module';
 import { getWorkspaceTheme } from '@/lib/api/theme';
 import { getCurrentUser } from '@/lib/api/user';
 import { getWorkspaceBySlug } from '@/lib/api/workspace';
 import Header from '@/components/layout/nav-bar';
-import CustomThemeWrapper from '@/components/layout/theme-wrapper';
-import { ThemeProvider as NextThemeProvider } from '@/components/theme-provider';
 
 type Props = {
   children: React.ReactNode;
