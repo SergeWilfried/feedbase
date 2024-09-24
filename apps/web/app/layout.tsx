@@ -44,8 +44,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {process.env.NODE_ENV === 'production' && (
           <Script
             defer
-            src='https://eu.umami.is/script.js'
-            data-website-id='3b6e5bd9-a7f1-41fe-9486-740daf1adaee'
+            src='https://cloud.umami.is/script.js'
+            data-website-id='e7a10fcd-ae96-47b7-9796-e993804f8607'
           />
         )}
         <SpeedInsights />
